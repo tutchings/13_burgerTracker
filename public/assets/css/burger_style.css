@@ -11,6 +11,10 @@ h1 {
     height: 25px;
 }
 
+#columns {
+    margin: 0 auto;
+}
+
 .create-form {
     width: 250px;
     margin: 0 auto;
