@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+}
+
+#bestBurgers {
+    text-align: center;
+}
+
+#burgerIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.create-form {
+    width: 250px;
+    margin: 0 auto;
+    text-align: center;
+}

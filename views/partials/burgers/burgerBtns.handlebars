@@ -1,20 +1,21 @@
 <li>
-    {{name}}
-
+    
     {{#if eat}}
-        <button class="change-eaten" data-id="{{id}}" data-newEaten="{{eat}}">
+        <button class="change-eaten btn btn-primary" data-id="{{id}}" data-newEaten="{{eat}}">
             Pickup 
         </button>
 
         {{else}}
-            <button class="deleteBurger" data-id="{{id}}" data-newEaten="{{eat}}">
+            <button class="deleteBurger btn btn-danger" data-id="{{id}}" data-newEaten="{{eat}}">
                 Delete 
             </button>
-            <button class="reorderBurger" data-id="{{id}}" data-newEaten="{{eat}}">
+            <button class="reorderBurger btn btn-success" data-id="{{id}}" data-newEaten="{{eat}}">
                 Reorder 
             </button>
 
     {{/if}}
+
+    <b>{{name}}</b>
     
 </li>
 
