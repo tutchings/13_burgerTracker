@@ -7,6 +7,7 @@ var router = express.Router();
 // import model from burger.js
 var burger = require("../models/burger.js");
 
+// get route
 router.get("/", function(req, res) {
     burger.all(function(data) {
         var hbsObj = {
@@ -17,6 +18,7 @@ router.get("/", function(req, res) {
     });
 });
 
+// post route
 router.post("/api/burgers", function(req, res) {
     burger.create([
         "name", "eaten"
@@ -27,6 +29,7 @@ router.post("/api/burgers", function(req, res) {
     });
 });
 
+// put route
 router.put("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
 
@@ -43,6 +46,7 @@ router.put("/api/burgers/:id", function(req, res) {
     });
 });
 
+// delete route
 router.delete("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
 
@@ -55,4 +59,6 @@ router.delete("/api/burgers/:id", function(req, res) {
     });
 });
 
+
+// exports router for use throughout application
 module.exports = router;

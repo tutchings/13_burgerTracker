@@ -1,6 +1,7 @@
 // import orm from orm.js
 var orm = require("../config/orm.js");
 
+// burger model
 var burger = {
     all: function(cb) {
         orm.all("burgers", function(res) {
