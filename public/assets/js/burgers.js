@@ -1,10 +1,10 @@
 $(function() {
     $(".change-eaten").on("click", function(event) {
         var id = $(this).data("id");
-        var newEaten = $(this).data("newEaten");
+        var newEaten = true
 
         var newEatenStatus = {
-            eaten: newEaten
+            eaten: true
         };
 
         $.ajax("/api/burgers/" + id, {
@@ -12,7 +12,26 @@ $(function() {
             data: newEatenStatus
         }).then(
             function() {
-                console.log('Changed burger status to', newEaten);
+                console.log('Changed burger eaten status to', newEaten);
+                location.reload();
+            }
+        );
+    });
+
+    $(".reorderBurger").on("click", function(event) {
+        var id = $(this).data("id");
+        var newEaten = false
+
+        var newEatenStatus = {
+            eaten: false
+        };
+
+        $.ajax("/api/burgers/" + id, {
+            type: "PUT",
+            data: newEatenStatus
+        }).then(
+            function() {
+                console.log("Changed burger eaten status to", newEaten);
                 location.reload();
             }
         );
@@ -23,7 +42,6 @@ $(function() {
 
         var newBurger = {
             name: $("#addBurger").val().trim(),
-            eaten: 'notEaten'
         };
 
         $.ajax("/api/burgers", {
